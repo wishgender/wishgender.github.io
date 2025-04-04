@@ -1,0 +1,149 @@
+@import url(./palette.css);
+@import url("https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css");
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+
+/* Title */
+
+.title {
+    text-align: center;
+    grid-row-end: span 1;
+}
+
+/* topnav buttons */
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: var(--base);
+    position:fixed;
+    height:100%;
+    overflow: auto;
+}
+
+.sidebar button {
+    font-family: 'Fira Code';
+    display:table;
+    width:100%;
+    color: var(--text);
+    padding:16px;
+    text-decoration: none;
+    border-radius: 0%;
+}
+
+.sidebar button.active {
+    background-color: var(--sapphire);
+    color: var(--base);
+}
+
+.sidebar button:hover:not(.active) {
+    background-color: var(--green);
+    color: var(--base);
+}
+
+/* margin left gotta match sidebar width */
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: auto;
+}
+
+/* become a topbar on screens between 400px and 700px */
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+/*display topbar vertically on screens smaller than 400px */
+@media screen and (max-width:400px) {
+    .sidebar a{
+        text-align: center;
+        float:none;
+    }
+}
+
+.sidebar a:link, a:visited {
+    text-decoration: none;
+    border-style:ridge;
+    border-color: var(--mantle);
+    padding:15px;
+}
+
+.sidebar a:active {
+    border-style: groove;
+    border-color: inherit;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid var(--surface0);
+}
+
+/* Social Buttons */
+
+.socialButtons a:link, a:visited{
+    border-style: groove;
+    border-radius: 100%;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--crust);
+}
+
+.socialButtons{
+    display:flex;
+    gap:20px;
+    justify-content:space-evenly;
+    padding:20px
+}
+
+a:link.YouTube, a:visited.YouTube {
+    border-color: var(--red);
+    i {color:var(--red)}
+    background-color: var(--crust);
+}
+
+.socialButtons a {
+    background-color: var(--crust);
+}
+
+.socialButtons a:active {
+    border-style:inset;
+}
+
+a:link.Blogger, a:visited.Blogger {
+    border-color: var(--peach);
+    i{color:var(--peach)};
+    background-color: var(--crust);
+}
+
+a:link.Bluesky, a:visited.Bluesky {
+    border-color: var(--sky);
+    i{color:var(--sky)}
+    background-color: var(--crust);
+}
+
+a:link.Mastodon, a:visited.Mastodon {
+    border-color: var(--lavender);
+    i{color:var(--lavender)}
+    background-color: var(--crust);
+}
+
+a:link.GitHub, a:visited.GitHub {
+    border-color: var(--mauve);
+    i{color:var(--mauve)}
+    background-color: var(--crust);
+}
+
+a:link.Instagram, a:visited.Instagram {
+    border-color: var(--pink);
+    i{color:var(--pink)}
+    background-color: var(--crust);
+}
