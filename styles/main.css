@@ -86,6 +86,11 @@ div.content {
     border: 1px solid var(--surface0);
 }
 
+.funStuff {
+    display:flex;
+    gap:20px;
+}
+
 /* Social Buttons */
 
 .socialButtons a:link, a:visited{

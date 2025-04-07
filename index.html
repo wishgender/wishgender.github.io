@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>WishGender Development</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script src="scripts/getByDex.js"></script>
     <meta charset="utf-8">
     <meta name="description" content="Thanks for visiting WishGender.dev! I hope you enjoy your time here!">
     <meta name="author" content="Laz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="icon/favicon.ico"/>
     <link rel="shortcut icon" href="icon/favicon.svg"/>
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
@@ -27,7 +29,6 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-
 <body style="font-family: 'Fira Code', monospace;">
     <h1 class="title">Welcome to WishGender Development!</h1>
     
@@ -56,14 +57,57 @@
                 My name is Laz, but I don't mind if you call me Wish! I do a little bit of everything, if I'm being honest! I used to make cosplay TikToks and UTAUloid YouTube videos. Occasionally, I'll still hop on over to Twitch and stream a bit of Destiny 2 or Pokemon if I'm feeling adventurous. I created my avatar (who I never officially named, but I'm calling him Wish unless I come up with a better idea) as a low-effort attempt at a PNGtuber so I wouldn't have to use my potato-quality webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
                 As of now I'm a college student pursuing a computer science degree. I have a particular interest in information privacy, which has definitely contributed to my desire to one day self-host not only a web server and this website, but also my own cloud storage. I think it should be a hell of a lot easier to self host your data if you want to, and want it to be a more accessible option.
                 In terms of software, I've been using Windows since discovering my grandpa's (R.I.P. Grandpa, I think you'd be proud of all the gadgets I've collected) old Asus work laptop running Windows XP and getting permission to essentially use it for myself. That machine was slow as hell and definitely full of malware (still don't know how much was actually because of me and how much was there when I found it), but it really kickstarted my appreciation for computers.    
+        </div>
+
+        <div id="Friends" class="tabcontent">
+            <h1 style="color:var(--lavender)"><span class="nf nf-fa-star"> Premium Content <span class="nf nf-fa-star"></h1>
+                <div id="friendLinks">
+                <h3 style="color:var(--lavender)">Friends</h3>
+                    <ul>
+                        <li><a href="https://vivy-nx.neocities.org/">Vivy-NX on Neocities</a></li>
+                        <li><a href="https://v360tech.neocities.org/">v360 on Neocities</a></li>
+                        <li><a href="https://twitter.com/disgustjpg">disgust.jpg on Twitter</a></li>
+                    </ul>
+                </div>
+
+                <div id="collabLinks">
+                <h3 style="color:var(--lavender)">Collabs and Projects I've Participated In</h3>
+                    <ul>
+                        <li>
+                            <div title="All Systems Go">
+                                <a href="https://blacksquirrelentertainment.com/tv/all-systems-go">
+                                    <i>All Systems Go!</i> (Black Squirrel Entertainment)</a>
+                                    <!-- <embed src="https://blacksquirrelentertainment.com/images/all-systems-go_poster.png" style="max-height:300px; max-width: fit-content;"></img> -->
+                                    <br><i>The Place For All Things Nerd Culture</i>
+                            </div>
+                        </li>
+                        <li>
+                            <div title="The Blurb">
+                                <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><i>The Blurb</i> (Black Squirrel Entertainment)</a>
+                                <br><i>Making Kent Feel Like Hollywood</i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <!-- just for fun content -->
+        <div id="Fun" class="tabcontent">
+            <div class="funStuff">
+                <div id="Pokefarm">
+                    <p>Check out <a href="https://pokefarm.com/user/WishGender">my PokéFarm</a>!!<br></p>
+                    <a href="https://pfq.link/?Wj_p3"><img src="https://pfq.link/?Wj_p3=platform.png" /></a>
+                </div>
+                <div id="PokedexNumber">
+                    <p>Pokedex Number: </p><input type="number" id="dexInput" placeholder="Enter Dex Number" />
+                    <button onclick="getPokemon()">Get Pokémon</button>
+                    <p id="result"></p>
+                </div>
             </div>
-            
-            <div id="Fun" class="tabcontent">
-                <p>Check out <a href="https://pokefarm.com/user/WishGender">my PokéFarm</a>!!<br></p>
-                <a href="https://pfq.link/?Wj_p3"><img src="https://pfq.link/?Wj_p3=platform.png" /></a>
-            </div>
-            <p style="text-align: center;">Here are some of the places you can find me!</p>
-            <div class="socialButtons">
+        </div>
+
+        <p style="text-align: center;">Here are some of the places you can find me!</p>
+        <div class="socialButtons">
             <a class="YouTube" href="https://www.youtube.com/@wishgender"><i class="nf nf-fa-youtube"></i><!-- YouTube</a></u> --></a>
             <a class="Blogger" href="https://wishgender.blogspot.com"><i class="nf nf-fa-blogger" style="color:var(--peach)"></i><!-- Blogger</a></u> --></a>
             <a class="Bluesky" href="https://bsky.app/profile/wishgender.bsky.social"><i class="nf nf-fae-butterfly" style="color:var(--sky)"></i><!-- Bluesky Social</a></u> --></a>
@@ -71,31 +115,28 @@
             <a class="GitHub" href="https://www.github.com/wishgender"><i class="nf nf-md-github" style="color:var(--mauve)"></i><!-- GitHub</a></u>  --></a>
             <a class="Instagram" href="https://www.instagram.com/wishgender"><i class="nf nf-fa-instagram" style="color:var(--pink)"></i><!-- Instagram</a></u> --></a>
         </div>
+        
         <footer>
             <p><i>I hope you'll visit again when the site is a bit less bare!</i></p>
         </footer>
     </div>
-        
-        <!-- will re-add once class resources are fixed -->
-        <!-- <footer><a href="HTML/class-resources.html">hehe</footer> -->
-            
-            
-            <script>
-                function openTab(evt, tabName) {
-                    var i, tabcontent, tablinks;
-                    
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace("active","");
-            }
+    
+    <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace("active","");
+                }
 
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-        document.getElementById("defaultOpen").click();
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            document.getElementById("defaultOpen").click();
     </script>
 </body>
+</html>
