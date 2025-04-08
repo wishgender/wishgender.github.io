@@ -1,3 +1,8 @@
+// import '../pokeapi-js-wrapper-sw.js'
+
+// const Pokedex = require("pokeapi-js-wrapper")
+// const P = new Pokedex.Pokedex({cacheImages:true})
+
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }

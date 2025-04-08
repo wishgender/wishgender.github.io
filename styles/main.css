@@ -89,6 +89,18 @@ div.content {
 .funStuff {
     display:flex;
     gap:20px;
+    align-content: space-evenly;
+
+}
+
+.randomPokemon {
+    border-style: groove;
+    background-color: var(--surface0);
+    border-color: var(--mantle);
+    text-decoration: none;
+    border-radius: 100%;
+    padding:3px;
+    color: var(--red);
 }
 
 /* Social Buttons */
