@@ -1,0 +1,260 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+@import url(./palette.css);
+
+@layer normalize, base, demo, rainbow, explode;
+
+@layer explode {
+  *,
+  *::after,
+  *::before {
+    transform-style: preserve-3d;
+  }
+  button span:not(:last-of-type) {
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    border: inherit;
+    opacity: 0;
+  }
+
+  button span:last-of-type {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  button span:nth-of-type(3) {
+    background: linear-gradient(light-dark(#fff, #000) 0 0) padding-box;
+  }
+  button span:nth-of-type(2) {
+    background: linear-gradient(0deg, #0000 0, var(--border) 18px) border-box;
+  }
+  button span:nth-of-type(1) {
+    background: linear-gradient(#0000 0 0), linear-gradient(#0000 0 0),
+      linear-gradient(in lch longer hue 90deg, var(--base) 0 0) border-box 0 0 /
+        400% 100%;
+  }
+
+  .wrap button::before {
+    transform: translate3d(0, 0, -1px);
+  }
+
+  [data-explode='false'] {
+    .wrap,
+    canvas {
+      transition: transform 1s 1s;
+    }
+
+    .wrap button {
+      transition: outline-color 1s;
+    }
+
+    .wrap button span,
+    .wrap button::before {
+      transition: transform 1s, opacity 0s 1s, outline-color 1s, scale 0.25s;
+    }
+  }
+
+  .wrap button span:nth-of-type(3),
+  .wrap button {
+    outline: 4px dashed #0000;
+  }
+
+  [data-explode='true'] {
+    .wrap,
+    canvas {
+      transform: scale(var(--scale, 1)) rotateX(-32deg) rotateY(45deg)
+        rotateX(90deg);
+      transition: transform 1s;
+    }
+    .wrap button::before {
+      --i: -1;
+    }
+
+    .wrap button {
+      background: none;
+      outline: 4px dashed canvasText;
+      transition: outline-color 1s 1s;
+    }
+
+    .wrap button span,
+    .wrap button::before {
+      opacity: 1;
+      transform: translate3d(0, 0, calc(var(--i) * 50px));
+      transition: scale 0.25s 0.1s, transform 1s 1s, outline-color 1s 1s;
+    }
+
+    .wrap button span:nth-of-type(4) {
+      --i: 4;
+    }
+    .wrap button span:nth-of-type(1) {
+      --i: 1;
+    }
+    .wrap button span:nth-of-type(2) {
+      --i: 2;
+    }
+    .wrap button span:nth-of-type(3) {
+      --i: 3;
+      outline: 4px dashed color-mix(in hsl, canvas, canvasText);
+    }
+  }
+}
+
+@layer rainbow {
+  :root {
+    --base: oklch(70% 0.155 360);
+  }
+  .wrap > button,
+  .wrap > button span:nth-of-type(1),
+  .wrap > button::before,
+  .wrap > button::after {
+    animation-composition: add;
+    -webkit-animation: rainbow 12s infinite linear,
+      rainbow 6s infinite linear var(--state, paused);
+            animation: rainbow 12s infinite linear,
+      rainbow 6s infinite linear var(--state, paused);
+  }
+
+  .wrap > button {
+    background: linear-gradient(light-dark(var(--light-base), var(--dark-base)) 0 0) padding-box,
+      linear-gradient(0deg, #0000 0, var(--border) 100px),
+      linear-gradient(in lch longer hue 90deg, var(--base) 0 0) border-box 0 0 /
+        400% 100%;
+  }
+
+  .wrap > button::before {
+    background: linear-gradient(#0000 0 0), linear-gradient(#0000 0 0),
+      linear-gradient(in lch longer hue 90deg, var(--base) 0 0) border-box 0 0 /
+        400% 100%;
+  }
+
+  .wrap > button::after {
+    background: linear-gradient(0 0 0) padding-box,
+      linear-gradient(0 0 0) border-box,
+      linear-gradient(in lch longer hue 90deg, var(--base) 0 0) border-box 0 0 /
+        400% 100%;
+  }
+
+  button:is(:hover) {
+    /* --state: running; */
+  }
+
+  @-webkit-keyframes rainbow {
+    to {
+      background-position: 0 0, 0 0, 400% 0;
+    }
+  }
+
+  @keyframes rainbow {
+    to {
+      background-position: 0 0, 0 0, 400% 0;
+    }
+  }
+}
+
+@layer demo {
+  .wrap:has(:active) {
+    scale: 0.99;
+  }
+
+  .wrap {
+    transition: scale 0.25s;
+  }
+
+  .wrap,
+  canvas {
+    transform: scale(var(--scale, 1));
+  }
+
+  .wrap button {
+    --border: color-mix(in hsl, canvas, canvasText 15%);
+    border-radius: 6px;
+    border: calc(var(--border-width, 2) * 1px) solid #0000;
+    font: inherit;
+    cursor: pointer;
+    /* outline: none; */
+    position: relative;
+    padding: 0;
+
+    /* ::after is used as the :focus-visible outline, do not remove */
+    &::after {
+      content: '';
+      position: absolute;
+      /* border: calc(var(--border-width, 2) * 1px) solid; */
+      /* inset: -8px; */
+      /* border-radius: 50px; */
+      opacity: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      filter: blur(calc(var(--blur, 10) * 1px))
+        brightness(var(--brightness, 1.25));
+      inset: 0 0 0 0;
+      border-radius: 0;
+      /* transform-origin: 50% 25%; */
+      opacity: 0.5;
+      scale: 0.4 0.4;
+      transition: scale 0.24s;
+    }
+  }
+
+  button:is(:hover, :focus-visible)::before {
+    scale: 1.1 1.25;
+  }
+
+  button:focus-visible::after {
+    opacity: 0.6;
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --font-size-max: 20;
+    --font-ratio-min: 1.2;
+    --font-ratio-max: 1.33;
+    --font-width-min: 375;
+    --font-width-max: 1500;
+  }
+
+  :where(.fluid) {
+    --fluid-min: calc(
+      var(--font-size-min) * pow(var(--font-ratio-min), var(--font-level, 0))
+    );
+    --fluid-max: calc(
+      var(--font-size-max) * pow(var(--font-ratio-max), var(--font-level, 0))
+    );
+    --fluid-preferred: calc(
+      (var(--fluid-max) - var(--fluid-min)) /
+        (var(--font-width-max) - var(--font-width-min))
+    );
+    --fluid-type: clamp(
+      (var(--fluid-min) / 16) * 1rem,
+      ((var(--fluid-min) / 16) * 1rem) -
+        (((var(--fluid-preferred) * var(--font-width-min)) / 16) * 1rem) +
+        (var(--fluid-preferred) * var(--variable-unit, 100vi)),
+      (var(--fluid-max) / 16) * 1rem
+    );
+    font-size: var(--fluid-type);
+  }
+
+
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in hsl, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+}

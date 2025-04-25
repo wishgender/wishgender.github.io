@@ -29,15 +29,20 @@
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body style="font-family: 'Fira Code', monospace;">
+<!-- <body style="font-family: 'Fira Code', monospace;"> -->
+    <body>
     <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/498.gif" alt="25"></br>Welcome to WishGender Development!</h1>
     
     <div class="sidebar">
-        <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">Home</button>
-        <button class="tablinks" onclick="openTab(event,'About')">About Me</button>
-        <button class="tablinks" onclick="openTab(event,'Friends')">Friends and Collabs</button>
-        <button class="tablinks" onclick="openTab(event,'Fun')">Just For Fun</button>
-        <button class="tablinks" onclick="openTab(event,'Joe')">Joe</button>
+        <div class="wrap">
+            <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">
+                Home
+            </button>
+            <button class="tablinks" onclick="openTab(event,'About')">About Me</button>
+            <button class="tablinks" onclick="openTab(event,'Friends')">Friends and Collabs</button>
+            <button class="tablinks" onclick="openTab(event,'Fun')">Just For Fun</button>
+            <button class="tablinks" onclick="openTab(event,'Joe')">Joe</button>
+        </div>
     </div>
     
     <div class="content">
@@ -54,21 +59,31 @@
         
         <!-- about me content -->
         <div id="About" class="tabcontent">
-            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
+            <!-- <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
                 My name is Laz, but I don't mind if you call me Wish! I do a little bit of everything, if I'm being honest! I used to make cosplay TikToks and UTAUloid YouTube videos. Occasionally, I'll still hop on over to Twitch and stream a bit of Destiny 2 or Pokemon if I'm feeling adventurous. I created my avatar (who I never officially named, but I'm calling him Wish unless I come up with a better idea) as a low-effort attempt at a PNGtuber so I wouldn't have to use my potato-quality webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
                 As of now I'm a college student pursuing a computer science degree. I have a particular interest in information privacy, which has definitely contributed to my desire to one day self-host not only a web server and this website, but also my own cloud storage. I think it should be a hell of a lot easier to self host your data if you want to, and want it to be a more accessible option.
-                In terms of software, I've been using Windows since discovering my grandpa's (R.I.P. Grandpa, I think you'd be proud of all the gadgets I've collected) old Asus work laptop running Windows XP and getting permission to essentially use it for myself. That machine was slow as hell and definitely full of malware (still don't know how much was actually because of me and how much was there when I found it), but it really kickstarted my appreciation for computers.    
+                In terms of software, I've been using Windows since discovering my grandpa's (R.I.P. Grandpa, I think you'd be proud of all the gadgets I've collected) old Asus work laptop running Windows XP and getting permission to essentially use it for myself. That machine was slow as hell and definitely full of malware (still don't know how much was actually because of me and how much was there when I found it), but it really kickstarted my appreciation for computers.  
+            </p>   -->
+            <table>
+                    <tr>
+                        <td>NAME</td>
+                        <td>Lazuli</td>
+                        <td>"Laz"</td>
+                    </tr>
+                    <tr>
+                        <td>PRONOUNS</td>
+                        <td>he/him/his</td><td>they/them/theirs</td>
+                    </tr>
+            </table>
         </div>
 
         <div id="Friends" class="tabcontent">
             <h1 style="color:var(--lavender)"><span class="nf nf-fa-star"> Premium Content <span class="nf nf-fa-star"></h1>
-                <div id="friendLinks">
                 <h3 style="color:var(--lavender)">Friends</h3>
-                    <ul>
-                        <li><a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png"></a></li>
-                        <li><a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif"></a></li>
-                        <li><a href="https://twitter.com/disgustjpg">disgust.jpg on Twitter</a></li>
-                    </ul>
+                <div class="friendLinks">
+                    <a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png"></a>
+                    <a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif"></a>
+                    <a href="https://twitter.com/disgustjpg"><img src="https://pbs.twimg.com/profile_images/1907128896241188864/C5iuZpVe_400x400.jpg" style="height:31px"></a>
                 </div>
 
                 <div id="collabLinks">

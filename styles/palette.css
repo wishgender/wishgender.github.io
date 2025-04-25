@@ -60,8 +60,8 @@
 }
 
 html, body {
-    background-color: light-dark(var(--light-base), var(--dark-base));
-    color: light-dark(var(--light-text), var(--dark-text));
+    /* background-color: light-dark(var(--light-base), var(--dark-base)); */
+    /* color: light-dark(var(--light-text), var(--dark-text)); */
 }
 
 body {
@@ -88,7 +88,7 @@ body {
     --surface2:   light-dark(   var(--light-surface2),   var(--dark-surface2));
     --surface1:   light-dark(   var(--light-surface1),   var(--dark-surface1));
     --surface0:   light-dark(   var(--light-surface0),   var(--dark-surface0));
-    --base:       light-dark(   var(--light-base),       var(--dark-base));
+    --ctpbase:    light-dark(   var(--light-base),       var(--dark-base));
     --mantle:     light-dark(   var(--light-mantle),     var(--dark-mantle));
     --crust:      light-dark(   var(--light-crust),      var(--dark-crust));
 }
@@ -119,13 +119,13 @@ body {
     --surface2: var(--ctp-macchiato-surface2);
     --surface1: var(--ctp-macchiato-surface1);
     --surface0: var(--ctp-macchiato-surface0);
-    --base: var(--ctp-macchiato-base);
+    --ctpbase: var(--ctp-macchiato-base);
     --mantle: var(--ctp-macchiato-mantle);
     --crust: var(--ctp-macchiato-crust);
 
     color:        var(--text);
     accent-color: var(--pink);
-    background:   var(--base);
+    background:   var(--ctpbase);
     border-color: var(--green);
 }
 
@@ -153,13 +153,13 @@ body {
     --surface2: var(--ctp-frappe-surface2);
     --surface1: var(--ctp-frappe-surface1);
     --surface0: var(--ctp-frappe-surface0);
-    --base: var(--ctp-frappe-base);
+    --ctpbase: var(--ctp-frappe-base);
     --mantle: var(--ctp-frappe-mantle);
     --crust: var(--ctp-frappe-crust);
 
     color:        var(--text);
     accent-color: var(--pink);
-    background:   var(--base);
+    background:   var(--ctpbase);
     border-color: var(--green);
     
 }
@@ -190,13 +190,13 @@ body {
     --surface2: var(--ctp-mocha-surface2);
     --surface1: var(--ctp-mocha-surface1);
     --surface0: var(--ctp-mocha-surface0);
-    --base: var(--ctp-mocha-base);
+    --ctpbase: var(--ctp-mocha-base);
     --mantle: var(--ctp-mocha-mantle);
     --crust: var(--ctp-mocha-crust);
 
     color:        var(--text);
     accent-color: var(--pink);
-    background-color:   var(--base);
+    background-color:   var(--ctpbase);
     border-color: var(--text);
     
 }

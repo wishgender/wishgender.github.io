@@ -1,0 +1,45 @@
+
+.rainbowButton {
+  background: black;
+  color: white;
+  font-size: 1.25rem;
+  padding: 2ch 3ch;
+  text-box: cap alphabetic;
+  border-radius: 1e3px;
+  border: none;
+  
+  position: relative;
+  
+  &::before {
+    --vibrance: 50%;
+    content: " ";
+    position: absolute;
+    inset: 10px 10px -10px;
+    background: linear-gradient(to right in oklch longer hue, oklch(95% var(--vibrance) 0) 0 100%);
+    filter: blur(20px);
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+
+
+@layer support {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  html {
+    block-size: 100%;
+    color-scheme: light;
+  }
+
+  body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: grid;
+    place-content: center;
+  }
+}

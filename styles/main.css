@@ -1,6 +1,20 @@
 @import url(./palette.css);
 @import url("https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
+@import url(./rainbowButtonLonger.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap');
+
+.rubik-vinyl-regular {
+    font-family: "Skranji", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+:root, body {
+    background-color: var(--ctpbase);
+}
 
 /* Title */
 
@@ -15,38 +29,35 @@
     margin: 0;
     padding: 0;
     width: 15%;
-    background-color: var(--base);
+    /* background-color: var(--ctpbase); */
     position:fixed;
-    height:100%;
-    overflow: auto;
+    gap: 10px;
+    text-align: center;
 }
 
 .sidebar button {
-    font-family: 'Fira Code';
+    font-family: 'Skranji';
     display:table;
     width:100%;
     color: var(--text);
-    padding:16px;
-    text-decoration: none;
-    border-radius: 0%;
+    padding:15px;
+    border-radius: 0;
 }
 
 .sidebar button.active {
-    background-color: var(--sapphire);
-    color: var(--base);
+    color: var(--green);
 }
 
 .sidebar button:hover:not(.active) {
-    background-color: var(--green);
-    color: var(--base);
+    color: var(--sapphire);
 }
 
 /* margin left gotta match sidebar width */
 div.content {
     float: left;
     margin-left: 15%;
-    padding: 1px 16px;
-    height: auto;
+    padding: 5px 16px;
+    height: 100%;
 }
 
 /* become a topbar on screens between 400px and 700px */
@@ -70,7 +81,6 @@ div.content {
 }
 
 .sidebar a:link, a:visited {
-    text-decoration: none;
     border-style:ridge;
     border-color: var(--mantle);
     padding:15px;
@@ -90,6 +100,15 @@ div.content {
 .funStuff {
     display:flex;
     gap:20px;
+}
+
+/* About Me Table */
+
+/* Friends & Collabs Styling */
+div.friendLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: space-evenly;
 }
 
 /* Social Buttons */
