@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Trivial Editor</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="styles/trivial.css" />
+    </head>
+
+    <body>
+        <h1>Live Trivial Interpreter</h1>
+        <p>This is a live code editor for the programming language Trivial created in Structure of Programming Languages class during the Spring 2025 semester. When implementing this, I utilized an online <a href="https://app.codeconvert.ai">code converter</a> to translate the initial Python code into JavaScript, which saved me time. While I did have to make a couple of adjustments, it still saved me a lot of time, as my level of experience with JavaScript is still not the best.</p>
+        <textarea id="code" placeholder="Input Trivial code here..."></textarea>
+        <button onclick="runCode()">RUN</button>
+        <h2>Output:</h2>
+        <pre id="output"></pre>
+
+        <script type="module">
+            import { run } from './scripts/trivial.js';
+
+            window.runCode = () => {
+                const code = document.getElementById("code").value;
+                const output = document.getElementById("output");
+
+                try {
+                    console.log = (msg) => output.textContent += msg + '\n'; //Capture console output
+                    output.textContent = ""; // clear previous output
+                    const result = run(code, {});
+                    if (result !== undefined && result !== null) {
+                        output.textContent += "\nResult: " + result;
+                    }
+                } catch (err) {
+                    output.textContent = "Error: " + err.message;
+                }
+            };
+        </script>
+    </body>
+</html>
