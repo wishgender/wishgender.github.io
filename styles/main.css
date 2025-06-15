@@ -1,11 +1,10 @@
 @import url(./palette.css);
 @import url("https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
-@import url(./rainbowButtonLonger.css);
 
 @import url('https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap');
 
-.rubik-vinyl-regular {
+.skranji {
     font-family: "Skranji", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -29,10 +28,12 @@
     margin: 0;
     padding: 0;
     width: 15%;
-    /* background-color: var(--ctpbase); */
+    background-color: var(--ctpbase);
     position:fixed;
     gap: 10px;
+    height: 100%;
     text-align: center;
+    overflow:auto;
 }
 
 .sidebar button {
@@ -92,7 +93,7 @@ div.content {
 }
 
 .tabcontent {
-    display: none;
+    width: 100%;
     padding: 6px 12px;
     border: 1px solid var(--surface0);
 }

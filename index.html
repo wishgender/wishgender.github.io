@@ -34,10 +34,7 @@
     <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/498.gif" alt="25"></br>Welcome to WishGender Development!</h1>
     
     <div class="sidebar">
-        <div class="wrap">
-            <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">
-                Home
-            </button>
+            <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">Home</button>
             <button class="tablinks" onclick="openTab(event,'About')">About Me</button>
             <button class="tablinks" onclick="openTab(event,'Friends')">Friends and Collabs</button>
             <button class="tablinks" onclick="openTab(event,'Fun')">Just For Fun</button>
@@ -48,22 +45,20 @@
     <div class="content">
         <!-- main content -->
         <div id="Home" class="tabcontent">
-            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
-                I'm a developer, though I'm still figuring out what I want to focus on in particular. Most of my experience is
-                in <i class="nf nf-custom-cpp" style="color:var(--sky)"  alt="C++"></i>, 
-                but I'm enjoying what I'm learning of 
-                <i class="nf nf-fa-html5" style="color:var(--peach)" alt="HTML"></i>/<i class="nf nf-fa-css3_alt" style="color:#2853e5" alt="CSS"></i>
-                and <i class="nf nf-fa-python" style="color:var(--yellow)" alt="Python"></i>!
-            </p>
+            <p>Thanks for visiting my site! I hope you enjoy poking around at my little project!</p>
         </div>
         
         <!-- about me content -->
         <div id="About" class="tabcontent">
-            <!-- <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
-                My name is Laz, but I don't mind if you call me Wish! I do a little bit of everything, if I'm being honest! I used to make cosplay TikToks and UTAUloid YouTube videos. Occasionally, I'll still hop on over to Twitch and stream a bit of Destiny 2 or Pokemon if I'm feeling adventurous. I created my avatar (who I never officially named, but I'm calling him Wish unless I come up with a better idea) as a low-effort attempt at a PNGtuber so I wouldn't have to use my potato-quality webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
-                As of now I'm a college student pursuing a computer science degree. I have a particular interest in information privacy, which has definitely contributed to my desire to one day self-host not only a web server and this website, but also my own cloud storage. I think it should be a hell of a lot easier to self host your data if you want to, and want it to be a more accessible option.
-                In terms of software, I've been using Windows since discovering my grandpa's (R.I.P. Grandpa, I think you'd be proud of all the gadgets I've collected) old Asus work laptop running Windows XP and getting permission to essentially use it for myself. That machine was slow as hell and definitely full of malware (still don't know how much was actually because of me and how much was there when I found it), but it really kickstarted my appreciation for computers.  
-            </p>   -->
+            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
+                My name is Laz, but I don't mind if you call me Wish! I do a little bit of everything, if I'm being honest! I used to make cosplay TikToks and UTAUloid YouTube videos. I created my avatar (who I never officially named, but I'm calling him Wish unless I come up with a better idea) as a low-effort attempt at a PNGtuber so I wouldn't have to use my potato-quality webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
+            </p>
+            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
+                I'm a developer, though I'm still figuring out what I want to focus on in particular. Most of my experience is
+                in <i class="nf nf-custom-cpp" style="color:var(--sky)"  alt="C++"></i>  and <i class="nf nf-fa-python" style="color:var(--yellow)" alt="Python"></i>, 
+                but I'm enjoying what I'm learning of 
+                <i class="nf nf-fa-html5" style="color:var(--peach)" alt="HTML"></i>/<i class="nf nf-fa-css3_alt" style="color:#2853e5" alt="CSS"></i> and <i class="nf nf-fa-js" style="color:var(--green)" alt="JavaScript"></i>!
+            </p>
             <table>
                     <tr>
                         <td>NAME</td>
@@ -102,7 +97,6 @@
 
         <!-- just for fun content -->
         <div id="Fun" class="tabcontent">
-            <div class="funStuff">
                 <div id="Pokefarm">
                     <p>Check out <a href="https://pokefarm.com/user/WishGender">my PokéFarm</a>!!<br></p>
                     <a href="https://pfq.link/?Wj_p3"><img src="https://pfq.link/?Wj_p3=platform.png" /></a>
@@ -112,7 +106,6 @@
                     <button onclick="getPokemon()">Get Pokémon</button>
                     <p id="result"></p>
                 </div>
-            </div>
         </div>
 
         <div id="Joe" class="tabcontent">
@@ -122,7 +115,7 @@
         <p style="text-align: center;">Here are some of the places you can find me!</p>
         <div class="socialButtons">
             <a class="YouTube" href="https://www.youtube.com/@wishgender"><i class="nf nf-fa-youtube"></i><!-- YouTube</a></u> --></a>
-            <a class="Blogger" href="https://wishgender.blogspot.com"><i class="nf nf-fa-blogger" style="color:var(--peach)"></i><!-- Blogger</a></u> --></a>
+            <a class="Blogger" href="https://blog.wishgender.dev"><i class="nf nf-fa-blogger" style="color:var(--peach)"></i><!-- Blogger</a></u> --></a>
             <a class="Bluesky" href="https://bsky.app/profile/wishgender.bsky.social"><i class="nf nf-fae-butterfly" style="color:var(--sky)"></i><!-- Bluesky Social</a></u> --></a>
             <a class="Mastodon" href="https://computerfairi.es/@wishgender"><i class="nf nf-fa-mastodon" style="color:var(--lavender)"></i><!-- Mastodon</a></u> --></a>
             <a class="GitHub" href="https://www.github.com/wishgender"><i class="nf nf-md-github" style="color:var(--mauve)"></i><!-- GitHub</a></u>  --></a>

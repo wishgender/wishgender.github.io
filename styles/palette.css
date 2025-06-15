@@ -60,8 +60,8 @@
 }
 
 html, body {
-    /* background-color: light-dark(var(--light-base), var(--dark-base)); */
-    /* color: light-dark(var(--light-text), var(--dark-text)); */
+    background-color: light-dark(var(--light-base), var(--dark-base));
+    color: light-dark(var(--light-text), var(--dark-text));
 }
 
 body {
