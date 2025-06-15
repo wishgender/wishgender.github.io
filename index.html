@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
     <script src="scripts/getByDex.js"></script>
+    <script src="scripts/changeTep.js"></script>
     <meta charset="utf-8">
     <meta name="description" content="Thanks for visiting WishGender.dev! I hope you enjoy your time here!">
     <meta name="author" content="Laz">
@@ -31,7 +32,7 @@
 </head>
 <!-- <body style="font-family: 'Fira Code', monospace;"> -->
     <body>
-    <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/498.gif" alt="25"></br>Welcome to WishGender Development!</h1>
+    <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/498.gif" alt="Tepig"></br>Welcome to WishGender Development!</h1>
     
     <div class="sidebar">
             <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">Home</button>
@@ -45,7 +46,7 @@
     <div class="content">
         <!-- main content -->
         <div id="Home" class="tabcontent">
-            <p>Thanks for visiting my site! I hope you enjoy poking around at my little project!</p>
+            <p style="font-size: x-large;text-align: center; margin-left: 25px;margin-right:25px;">Thanks for visiting my site! I hope you enjoy poking around at my little project!</p>
         </div>
         
         <!-- about me content -->
@@ -76,9 +77,9 @@
             <h1 style="color:var(--lavender)"><span class="nf nf-fa-star"> Premium Content <span class="nf nf-fa-star"></h1>
                 <h3 style="color:var(--lavender)">Friends</h3>
                 <div class="friendLinks">
-                    <a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png"></a>
-                    <a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif"></a>
-                    <a href="https://twitter.com/disgustjpg"><img src="https://pbs.twimg.com/profile_images/1907128896241188864/C5iuZpVe_400x400.jpg" style="height:31px"></a>
+                    <a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png" class="friendButton"></a>
+                    <a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif" class="friendButton"></a>
+                    <a href="https://twitter.com/disgustjpg"><img src="images/disgust.svg" style="height:31px" class="disgustPFP"></a>
                 </div>
 
                 <div id="collabLinks">
@@ -86,10 +87,10 @@
                     <div style="display: flex; justify-content: space-evenly;">
                             <div title="All Systems Go">
                                 <a href="https://blacksquirrelentertainment.com/tv/all-systems-go">
-                                    <img src="images/asg.png" height="48px"></a>
+                                    <img src="images/asg.svg" height="48px" class="ASGButton"></a>
                             </div>
                             <div title="The Blurb">
-                                <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><img src="images/blurb.png" height="48px"></a>
+                                <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><img src="images/blurb.svg" height="48px" class="blurbButton"></a>
                             </div>
                     </div>
                 </div>
@@ -126,8 +127,8 @@
             <p><i>I hope you'll visit again when the site is a bit less bare!</i></p>
         </footer>
     </div>
-    
-    <script>
+
+    <script id="openTap">
             function openTab(evt, tabName) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tabcontent");

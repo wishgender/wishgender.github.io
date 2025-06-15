@@ -15,6 +15,28 @@
     background-color: var(--ctpbase);
 }
 
+/* Animations */
+@keyframes growText {
+    from {font-size:large;}
+    to {font-size:x-large;}
+}
+@keyframes growButton {
+    from {width:100%}
+    to {width:120%}
+}
+@keyframes growASG {
+    from {width:48px;height:48px}
+    to {width:60px;height:60px}
+}
+@keyframes growBlurb {
+    from {width:auto;height:48px}
+    to {width:auto;height:60px}
+}
+@keyframes growDisgust {
+    from {width:auto;height:31px}
+    to {width:auto;height:48px}
+}
+
 /* Title */
 
 .title {
@@ -38,6 +60,7 @@
 
 .sidebar button {
     font-family: 'Skranji';
+    font-size:large;
     display:table;
     width:100%;
     color: var(--text);
@@ -51,7 +74,11 @@
 
 .sidebar button:hover:not(.active) {
     color: var(--sapphire);
+    animation-name: growText;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
+
 
 /* margin left gotta match sidebar width */
 div.content {
@@ -93,8 +120,9 @@ div.content {
 }
 
 .tabcontent {
+    display: auto;
     width: 100%;
-    padding: 6px 12px;
+    padding: 5px 16px;
     border: 1px solid var(--surface0);
 }
 
@@ -111,7 +139,30 @@ div.friendLinks {
     justify-content: space-evenly;
     align-items: space-evenly;
 }
-
+.friendButton:hover {
+    animation-name: growButton;
+    animation-duration:0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.disgustPFP:hover {
+    animation-name: growDisgust;
+    animation-duration:0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.ASGButton:hover {
+    animation-name: growASG;
+    animation-duration:0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.blurbButton:hover {
+    animation-name: growBlurb;
+    animation-duration:0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 /* Social Buttons */
 
 .socialButtons a:link, a:visited{
