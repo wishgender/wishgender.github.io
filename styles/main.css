@@ -10,159 +10,170 @@
     font-style: normal;
 }
 
+body {
+    font-family: "Comic Sans MS", Chalkduster, sans-serif;
+}
+
+@media screen and (min-width: 701px) {
+    .PageLayout {
+        padding: 0 1rem 0 1rem;
+        display: grid;
+        grid:
+            "Header Header Header" auto
+            "Sidebar Content Content" 1fr
+            "Footer Footer Footer" auto
+            / 0.6fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    #Sidebar {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .PageLayout {
+        display: grid;
+        grid:
+            "Header Header Header" auto
+            "Sidebar Sidebar Sidebar" auto
+            "Content Content Content" 1fr
+            "Footer Footer Footer" auto
+            / auto 1fr 1fr;
+    }
+
+    #Sidebar {
+        margin-bottom: 1em;
+        gap: 0px;
+    }
+}
+#Header {
+    grid-area: Header;
+    text-align: center;
+    font-family: Skranji;
+}
+
+#Sidebar {
+    grid-area: Sidebar;
+    background-color: var(--ctpbase);
+    text-align: center;
+}
+
+#Content {
+    grid-area: Content;
+}
+
+#Footer {
+    grid-area: Footer;
+    text-align: center;
+}
 
 :root, body {
     background-color: var(--ctpbase);
 }
 
-/* Animations */
-@keyframes growText {
-    from {font-size:large;}
-    to {font-size:x-large;}
-}
-@keyframes growButton {
-    from {width:100%}
-    to {width:120%}
-}
-@keyframes growASG {
-    from {width:48px;height:48px}
-    to {width:60px;height:60px}
-}
-@keyframes growBlurb {
-    from {width:auto;height:48px}
-    to {width:auto;height:60px}
-}
-@keyframes growDisgust {
-    from {width:auto;height:31px}
-    to {width:auto;height:48px}
-}
-
-/* Title */
-
-.title {
-    text-align: center;
-    grid-row-end: span 1;
-}
-
 /* topnav buttons */
-
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 15%;
-    background-color: var(--ctpbase);
-    position:fixed;
-    gap: 10px;
-    height: 100%;
-    text-align: center;
-    overflow:auto;
-}
 
 .sidebar button {
     font-family: 'Skranji';
     font-size:large;
-    display:table;
-    width:100%;
     color: var(--text);
     padding:15px;
-    border-radius: 0;
+    border-radius: 8px;
 }
 
 .sidebar button.active {
     color: var(--green);
+    transform: scale(1.1); /* highlight active button */
 }
 
 .sidebar button:hover:not(.active) {
     color: var(--sapphire);
-    animation-name: growText;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    transform: scale(1.1);  /* grow visually, no reflow */
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 
-/* margin left gotta match sidebar width */
-div.content {
-    float: left;
-    margin-left: 15%;
-    padding: 5px 16px;
-    height: 100%;
-}
-
-/* become a topbar on screens between 400px and 700px */
-@media screen and (max-width: 700px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-}
 
 /*display topbar vertically on screens smaller than 400px */
 @media screen and (max-width:400px) {
-    .sidebar a{
-        text-align: center;
-        float:none;
+    .sidebar {
+        display: grid;
+        margin-right: 1em;
+        margin-left: 1em;
     }
 }
 
-.sidebar a:link, a:visited {
-    border-style:ridge;
-    border-color: var(--mantle);
-    padding:15px;
-}
-
-.sidebar a:active {
-    border-style: groove;
-    border-color: inherit;
-}
-
 .tabcontent {
-    display: auto;
-    width: 100%;
-    padding: 5px 16px;
-    border: 1px solid var(--surface0);
+    /* width: 100%; */
+    /* padding: 5px 16px; */
+    border: 2px solid var(--surface0);
 }
 
-.funStuff {
+#About {
+    display: flex;
+    text-align: center;
+}
+
+#About>p {
+    text-align: left; 
+    text-indent: 25px; 
+    padding-left: 25px; 
+    padding-right: 25px; 
+    font-size: large;
+}
+
+#FunContents {
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding:1em;
     display:flex;
-    gap:20px;
+    /* grid:
+        "DexNum PokeFarm" auto
+        "ThisDay ThisDay" auto
+        / auto auto; */
+}
+
+#PokedexNumber {
+    grid-area: DexNum;
+}
+
+#PokeFarm {
+    grid-area: PokeFarm;
+}
+
+#ThisDay {
+    grid-area: ThisDay;
+}
+
+#Joe {
+    display: flex;
+    width: auto;
+}
+
+#Friends {
+    text-align: center;
+}
+
+#Friends.tabcontent  {
+    padding-bottom: 1rem;
 }
 
 /* About Me Table */
 
 /* Friends & Collabs Styling */
-div.friendLinks {
+.friendLinks {
     display: flex;
     justify-content: space-evenly;
-    align-items: space-evenly;
+    align-items: center;
 }
 .friendButton:hover {
-    animation-name: growButton;
-    animation-duration:0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    transform: scale(1.5);  /* grow visually, no reflow */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-.disgustPFP:hover {
-    animation-name: growDisgust;
-    animation-duration:0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-.ASGButton:hover {
-    animation-name: growASG;
-    animation-duration:0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-.blurbButton:hover {
-    animation-name: growBlurb;
-    animation-duration:0.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+
 /* Social Buttons */
 
 .socialButtons a:link, a:visited{
@@ -175,10 +186,17 @@ div.friendLinks {
 }
 
 .socialButtons{
+    /* align-items: center; */
     display:flex;
     gap:20px;
     justify-content:space-evenly;
     padding:20px
+}
+
+.socialButtons>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a:link.YouTube, a:visited.YouTube {
@@ -195,31 +213,31 @@ a:link.YouTube, a:visited.YouTube {
     border-style:inset;
 }
 
-a:link.Blogger, a:visited.Blogger {
+.Blogger {
     border-color: var(--peach);
     i{color:var(--peach)};
     background-color: var(--crust);
 }
 
-a:link.Bluesky, a:visited.Bluesky {
+.Bluesky {
     border-color: var(--sky);
     i{color:var(--sky)}
     background-color: var(--crust);
 }
 
-a:link.Mastodon, a:visited.Mastodon {
+.Mastodon {
     border-color: var(--lavender);
     i{color:var(--lavender)}
     background-color: var(--crust);
 }
 
-a:link.GitHub, a:visited.GitHub {
+.GitHub {
     border-color: var(--mauve);
     i{color:var(--mauve)}
     background-color: var(--crust);
 }
 
-a:link.Instagram, a:visited.Instagram {
+.Instagram {
     border-color: var(--pink);
     i{color:var(--pink)}
     background-color: var(--crust);

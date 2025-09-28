@@ -31,10 +31,12 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <!-- <body style="font-family: 'Fira Code', monospace;"> -->
-    <body>
-    <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/500.gif" alt="Tepig"></br>Welcome to WishGender Development!</h1>
+    <body class="PageLayout">
+        <div id="Header">
+            <h1 class="title"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/500.gif" alt="Tepig"></br>Welcome to WishGender Development!</h1>
+        </div>
     
-    <div class="sidebar">
+    <div id="Sidebar" class="sidebar">
             <button class="tablinks" onclick="openTab(event,'Home')" id="defaultOpen">Home</button>
             <button class="tablinks" onclick="openTab(event,'About')">About Me</button>
             <button class="tablinks" onclick="openTab(event,'Friends')">Friends and Collabs</button>
@@ -43,7 +45,7 @@
         </div>
     </div>
     
-    <div class="content">
+    <div id="Content" class="content">
         <!-- main content -->
         <div id="Home" class="tabcontent">
             <p style="font-size: x-large;text-align: center; margin-left: 25px;margin-right:25px;">Thanks for visiting my site! I hope you enjoy poking around at my little project!</p>
@@ -51,26 +53,17 @@
         
         <!-- about me content -->
         <div id="About" class="tabcontent">
-            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
-                My name is Laz, but I don't mind if you call me Wish! I do a little bit of everything, if I'm being honest! I used to make cosplay TikToks and UTAUloid YouTube videos. I created my avatar (who I never officially named, but I'm calling him Wish unless I come up with a better idea) as a low-effort attempt at a PNGtuber so I wouldn't have to use my potato-quality webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
+            <p>
+                My name is Laz, but I don't mind if you call me Wish! My pronouns are he/they. I used to make YouTube content, but nowadays I don't do much over there. I created my avatar, Wish, as a low-effort attempt at a PNGtuber so I wouldn't have to use my laptop webcam if I wanted any sort of representation of myself, but with a bit of care and effort, I think he's grown to be a lot more than that now! 
             </p>
-            <p style="text-align: center; margin-left: 25px; margin-right: 25px; font-size: large;">
-                I'm a developer, though I'm still figuring out what I want to focus on in particular. Most of my experience is
-                in <i class="nf nf-custom-cpp" style="color:var(--sky)"  alt="C++"></i>  and <i class="nf nf-fa-python" style="color:var(--yellow)" alt="Python"></i>, 
-                but I'm enjoying what I'm learning of 
-                <i class="nf nf-fa-html5" style="color:var(--peach)" alt="HTML"></i>/<i class="nf nf-fa-css3_alt" style="color:#2853e5" alt="CSS"></i> and <i class="nf nf-fa-js" style="color:var(--green)" alt="JavaScript"></i>!
+            <p style="text-align: left; text-indent: 25px; padding-left: 25px; padding-right: 25px; font-size: large;">
+                I'm a computer programmer with a particular interest in supercomputing. Lately, most of what I've been coding has been web development, though. You wouldn't guess it, based on the quality of <i>this</i> website, but I'm actually the Web Manager for <a href="https://blacksquirrelentertainment.com/">Black Squirrel Entertainment</a>. That leads very nicely into my other main interest: broadcast media.
             </p>
-            <table>
-                    <tr>
-                        <td>NAME</td>
-                        <td>Lazuli</td>
-                        <td>"Laz"</td>
-                    </tr>
-                    <tr>
-                        <td>PRONOUNS</td>
-                        <td>he</td><td>him</td>
-                    </tr>
-            </table>
+            <p style="text-align: left; text-indent: 25px; padding-left: 25px; padding-right: 25px; font-size: large;">
+                I joined Black Squirrel Entertainment (Kent State University Student Media's TV and Radio organization) in the spring of 2024 as a cast member on <a href="https://blacksquirrelentertainment.com/tv/all-systems-go"><i>All Systems Go!</i></a>, which I began hosting in the fall of 2025. Joining <i>ASG</i> was genuinely one of the best decisions I've ever made, as it allowed me to meet some incredible people who I am so, so lucky to get to call my friends. In addition to <i>ASG!</i>, I joined the cast of <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><i>The Blurb</i></a> during the Spring 2025 semester. </p>
+            <p style="text-align: left; text-indent: 25px; padding-left: 25px; padding-right: 25px; font-size: large;">
+                At that same time, I also became a member of Kent State Student Media Production and Film Distribution, contributing to the production of KentStaterTV newscasts. As of fall 2025, I'm currently the Friday newscast director, which is a lot to get used to, but I quite enjoy it.
+            </p>
         </div>
 
         <div id="Friends" class="tabcontent">
@@ -79,7 +72,7 @@
                 <div class="friendLinks">
                     <a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png" class="friendButton"></a>
                     <a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif" class="friendButton"></a>
-                    <a href="https://twitter.com/disgustjpg"><img src="images/disgust.svg" style="height:31px" class="disgustPFP"></a>
+                    <a href="https://twitter.com/disgustjpg"><img src="images/disgust.svg" style="height:31px" class="friendButton"></a>
                 </div>
 
                 <div id="collabLinks">
@@ -87,10 +80,10 @@
                     <div style="display: flex; justify-content: space-evenly;">
                             <div title="All Systems Go">
                                 <a href="https://blacksquirrelentertainment.com/tv/all-systems-go">
-                                    <img src="images/asg.svg" height="48px" class="ASGButton"></a>
+                                    <img src="images/asg.svg" height="48px" class="friendButton"></a>
                             </div>
                             <div title="The Blurb">
-                                <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><img src="images/blurb.svg" height="48px" class="blurbButton"></a>
+                                <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><img src="images/blurb.svg" height="48px" class="friendButton"></a>
                             </div>
                     </div>
                 </div>
@@ -98,22 +91,27 @@
 
         <!-- just for fun content -->
         <div id="Fun" class="tabcontent">
+            <div id="FunContents">
+                <div id="PokedexNumber">
+                    <input type="number" id="dexInput" placeholder="Dex Number" />
+                    <button onclick="getPokemon()">Go!</button>
+                    <figure id="DexResult"><figcaption id="ResultText"></figcaption></figure>
+                </div>
+                <a id="ThisDay" href="https://thisday.wishgender.dev">This Day in Pokémon History...</a>
                 <div id="Pokefarm">
-                    <p>Check out <a href="https://pokefarm.com/user/WishGender">my PokéFarm</a>!!<br></p>
+                    Check out <a href="https://pokefarm.com/user/WishGender">my PokéFarm</a>!!<br/>
                     <a href="https://pfq.link/?Wj_p3"><img src="https://pfq.link/?Wj_p3=platform.png" /></a>
                 </div>
-                <div id="PokedexNumber">
-                    <p>Pokedex Number: </p><input type="number" id="dexInput" placeholder="Enter Dex Number" />
-                    <button onclick="getPokemon()">Get Pokémon</button>
-                    <p id="result"></p>
-                </div>
+            </div>
         </div>
 
         <div id="Joe" class="tabcontent">
-            <img src="images/seal.webp" style="width:37.5%">
-            <div style="width:37.5%"><video src="images/egg.mp4" controls></video></br>Courtesy of <a href="https://youtube.com/@YesBacon">YesBacon on YouTube</a></div>
+            <img src="images/seal.webp" style="width:100%">
+            <!-- <div style="width:100%"><video id="SealVideo" src="images/egg.mp4" controls></video><figcaption>Courtesy of <a href="https://youtube.com/@YesBacon">YesBacon on YouTube</a></figcaption></div> -->
         </div>
 
+    </div>
+    <footer id="Footer">
         <p style="text-align: center;">Here are some of the places you can find me!</p>
         <div class="socialButtons">
             <a class="YouTube" href="https://www.youtube.com/@wishgender"><i class="nf nf-fa-youtube"></i><!-- YouTube</a></u> --></a>
@@ -124,12 +122,10 @@
             <a class="Instagram" href="https://www.instagram.com/wishgender"><i class="nf nf-fa-instagram" style="color:var(--pink)"></i><!-- Instagram</a></u> --></a>
         </div>
         
-        <footer>
-            <p><i>I hope you'll visit again when the site is a bit less bare!</i></p>
-        </footer>
-    </div>
+        <p><i>I hope you'll visit again when the site is a bit less bare!</i></p>
+    </footer>
 
-    <script id="openTap">
+    <script id="openTab">
             function openTab(evt, tabName) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tabcontent");
@@ -141,7 +137,7 @@
                     tablinks[i].className = tablinks[i].className.replace("active","");
                 }
 
-                document.getElementById(tabName).style.display = "block";
+                document.getElementById(tabName).style.display = "grid";
                 evt.currentTarget.className += " active";
             }
             document.getElementById("defaultOpen").click();

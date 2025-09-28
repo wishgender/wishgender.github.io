@@ -8,13 +8,15 @@ function checkDate() {
     else if (d.getMonth()==4 && d.getDate()==31) return true;
     else if (d.getMonth()==9 && d.getDate()==27) return true;
     else if (d.getMonth()==0 && d.getDate()==2) return true;
+    else if (d.getMonth()==10 && d.getDate()==14) return true;
     else return false;
 }
 function getPokemon() {
     const dexNumber = document.getElementById('dexInput').value;
-    const result = document.getElementById('result');
+    const result = document.getElementById('DexResult');
+    const caption = document.getElementById('ResultText');
     // Clear previous result
-    result.textContent = "Loading...";
+    caption.textContent = "Loading...";
     fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
     .then(response => {
         if (!response.ok) {
@@ -23,14 +25,15 @@ function getPokemon() {
         return response.json();
     })
     .then(data => {
-        result.textContent = `Pokémon #${dexNumber} is ${capitalize(data.species.name)}`;
-        pic = new Image()
+        let textContent = `Pokémon #${dexNumber} is ${capitalize(data.species.name)}`;
+        caption.textContent = textContent;
+        let pic = new Image()
         if (checkDate())
             pic.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${dexNumber}.png`;
         else
             pic.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`;
-        result.style = 'text-align:center;display:flex'
-        result.appendChild(pic)
+        result.style = 'text-align:center;'
+        result.appendChild(pic);
     })
     .catch(error => {
         result.textContent = error.message;
