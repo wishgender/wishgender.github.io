@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+
+html {
+    background-color: #A9ACA9;
+}
+
+#title, #subtitle, .universe, .character {
+    font-family: Metamorphous, serif;
+}
+
+body {
+    text-align: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted black;
+}
+
+.tooltip .tooltipText {
+    font-size: 75%;
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip:hover {
+    cursor: help;
+}
+
+.characters {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.characterWrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.character {
+    background-color: #BFC3BA;
+    padding: 1rem;
+    border: 2px solid #222222;
+    border-radius: 4px;
+}
+
+.character:hover {
+    cursor:pointer;
+}
+
+#odin:hover {
+    transition: background-color, color, 0.3s;
+    background-color: #540b0e;
+    color:  #BFC3BA;
+}
+
+#thor:hover {
+    transition: background-color, color, 0.3s;
+    background-color: #334c71;
+    color:  #BFC3BA;
+}
+
+#loki:hover {
+    transition: background-color, color, 0.3s;
+    background-color: #2a6212;
+    color:  #BFC3BA;
+}
+
+.universes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.universeWrapper {
+    margin: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #BFC3BA;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #222222;
+    border-radius: 6px;
+}
+
+.universe {
+    flex-wrap: wrap;
+}
+
+.characterInfo {
+    /* visibility: hidden; */
+    display: none;
+}
+
+.odinInfo {
+    display: inline;
+    text-align: left;
+    ul {
+        padding-left: 0.8rem;
+    }
+}
+
+.thorInfo {
+    display: inline;
+    text-align: left;
+    ul {
+        padding-left: 0.8rem;
+    }
+}
+
+.lokiInfo {
+    display: inline;
+    text-align: left;
+    ul {
+        padding-left: 0.8rem;
+    }
+}
+
+#sources {
+    text-align: left;
+    list-style-type: none;
+    padding-left: 2rem;
+    text-indent: -2rem;
+}
