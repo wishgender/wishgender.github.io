@@ -27,13 +27,13 @@ function getPokemon() {
     .then(data => {
         let textContent = `Pokémon #${dexNumber} is ${capitalize(data.species.name)}`;
         caption.textContent = textContent;
-        let pic = new Image()
+        let pic = document.getElementById('ResultPic');
         if (checkDate())
             pic.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${dexNumber}.png`;
         else
             pic.src=`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`;
         result.style = 'text-align:center;'
-        result.appendChild(pic);
+        if (pic.src !== '') pic.style = 'display: auto';
     })
     .catch(error => {
         result.textContent = error.message;

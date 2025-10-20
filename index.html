@@ -93,9 +93,9 @@
         <div id="Fun" class="tabcontent">
             <div id="FunContents">
                 <div id="PokedexNumber">
-                    <input type="number" id="dexInput" placeholder="Dex Number" />
+                    <input type="number" id="dexInput" max=1025 min= 1 placeholder="Dex Number" />
                     <button onclick="getPokemon()">Go!</button>
-                    <figure id="DexResult"><figcaption id="ResultText"></figcaption></figure>
+                    <figure id="DexResult"><img id="ResultPic" style="display:none" src=""><figcaption id="ResultText"></figcaption></figure>
                 </div>
                 <a id="ThisDay" href="https://thisday.wishgender.dev">This Day in Pokémon History...</a>
                 <div id="Pokefarm">
