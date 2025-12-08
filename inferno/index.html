@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Inferno Scroll Rings</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Garamond", serif;
+        background: black;
+        color: #f5e4c3;
+        overflow-x: hidden;
+    }
+
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .ring {
+        position: absolute;
+        width: 70vmin;
+        height: 70vmin;
+        border-radius: 50%;
+        border: 6px solid rgba(255, 140, 0, 0.4);
+        box-shadow: 0 0 30px rgba(255, 60, 0, 0.4);
+        transition: transform 1.2s ease, opacity 1.2s ease;
+        opacity: 0.2;
+        transform: scale(1.6); /* farther away until we scroll to it */
+    }
+
+    .ring.active {
+        transform: scale(1);
+        opacity: 1;
+        border-color: rgba(255, 200, 150, 0.9);
+        box-shadow: 0 0 50px rgba(255, 120, 40, 0.8);
+    }
+
+    .label {
+        font-size: 2rem;
+        text-align: center;
+        z-index: 5;
+        letter-spacing: 0.05em;
+        text-shadow: 0 0 10px #000;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 9 circles of Dante's Inferno -->
+<section id="circle1">
+    <div class="ring"></div>
+    <div class="label">I – Limbo</div>
+</section>
+
+<section id="circle2">
+    <div class="ring"></div>
+    <div class="label">II – Lust</div>
+</section>
+
+<section id="circle3">
+    <div class="ring"></div>
+    <div class="label">III – Gluttony</div>
+</section>
+
+<section id="circle4">
+    <div class="ring"></div>
+    <div class="label">IV – Greed</div>
+</section>
+
+<section id="circle5">
+    <div class="ring"></div>
+    <div class="label">V – Wrath</div>
+</section>
+
+<section id="circle6">
+    <div class="ring"></div>
+    <div class="label">VI – Heresy</div>
+</section>
+
+<section id="circle7">
+    <div class="ring"></div>
+    <div class="label">VII – Violence</div>
+</section>
+
+<section id="circle8">
+    <div class="ring"></div>
+    <div class="label">VIII – Fraud</div>
+</section>
+
+<section id="circle9">
+    <div class="ring"></div>
+    <div class="label">IX – Treachery</div>
+</section>
+
+<script>
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const ring = entry.target.querySelector(".ring");
+
+            if (entry.isIntersecting) {
+                ring.classList.add("active");
+            } else {
+                ring.classList.remove("active");
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
