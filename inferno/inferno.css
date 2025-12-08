@@ -1,0 +1,175 @@
+body {
+        margin: 0;
+        font-family: "Garamond", serif;
+        background: black;
+        color: #f5e4c3;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    #colorKey {
+        display: flex;
+        position:fixed;
+        background-color: black;
+        z-index: 20;
+        /* justify-content: center; */
+        text-align:center;
+        align-content: center;
+        outline: 2px solid white;
+    }
+
+    #colorKey>div {
+        padding: 20px;
+    }
+
+    .biblical {
+        color: yellow;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .historical {
+        color: lime;
+    }
+
+    .mythological {
+        color:crimson;
+    }
+
+    .romanHist {
+        color: aqua;
+    }
+
+    .contemp {
+        color:deepskyblue;
+    }
+    
+    .label {
+        padding-top: 20px;
+    }
+    
+    .inhabitants {
+        justify-content: center;
+        align-items: center;
+        display:flex;
+    }
+
+    .ring {
+        position: absolute;
+        width: 70vmin;
+        height: 70vmin;
+        border-radius: 50%;
+        border: 6px solid rgba(255, 140, 0, 0.4);
+        box-shadow: 0 0 30px rgba(255, 60, 0, 0.4);
+        transition: transform 1.2s ease, opacity 1.2s ease;
+        opacity: 0.2;
+        transform: scale(1.6); /* farther away until we scroll to it */
+    }
+    
+    .ring.active {
+        transform: scale(1);
+        opacity: 1;
+        border-color: rgba(255, 200, 150, 0.9);
+        box-shadow: 0 0 50px rgba(255, 120, 40, 0.8);
+    }
+    
+    .label {
+        font-size: 2rem;
+        text-align: center;
+        z-index: 5;
+        letter-spacing: 0.05em;
+        text-shadow: 0 0 10px #000;
+    }
+
+    #circle2 {
+        .ring {
+            border: 6px solid rgba(255, 50, 50, 0.4);
+            box-shadow: 0 0 30px rgba(255, 51, 0, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(255, 150, 150, 0.9);
+            box-shadow: 0 0 50px rgba(255, 40, 40, 0.8);
+        }
+    }
+    #circle3 {
+        .ring {
+            border: 6px solid rgba(255, 0, 98, 0.4);
+            box-shadow: 0 0 30px rgba(255, 0, 115, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(255, 150, 208, 0.9);
+            box-shadow: 0 0 50px rgba(255, 40, 79, 0.8);
+        }
+    }
+    #circle4 {
+        .ring {
+            border: 6px solid rgba(230, 0, 255, 0.4);
+            box-shadow: 0 0 30px rgba(208, 0, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(230, 150, 255, 0.9);
+            box-shadow: 0 0 50px rgba(205, 40, 255, 0.8);
+        }
+    }
+    #circle5 {
+        .ring {
+            border: 6px solid rgba(136, 0, 255, 0.4);
+            box-shadow: 0 0 30px rgba(85, 0, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(160, 150, 255, 0.9);
+            box-shadow: 0 0 50px rgba(115, 40, 255, 0.8);
+        }
+    }
+    #circle6 {
+        .ring {
+            border: 6px solid rgba(64, 0, 255, 0.4);
+            box-shadow: 0 0 30px rgba(25, 0, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(150, 157, 255, 0.9);
+            box-shadow: 0 0 50px rgba(44, 40, 255, 0.8);
+        }
+    }
+    #circle7 {
+        .ring {
+            border: 6px solid rgba(0, 51, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 21, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(117, 140, 255, 0.9);
+            box-shadow: 0 0 50px rgba(40, 76, 255, 0.8);
+        }
+    }
+    #circle8 {
+        .ring {
+            border: 6px solid rgba(0, 128, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 55, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(150, 174, 255, 0.9);
+            box-shadow: 0 0 50px rgba(40, 130, 255, 0.8);
+        }
+    }
+    #circle9 {
+        .ring {
+            border: 6px solid rgba(0, 183, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 119, 255, 0.4);
+        }
+        .ring.active {
+            border-color: rgba(150, 223, 255, 0.9);
+            box-shadow: 0 0 50px rgba(40, 191, 255, 0.8);
+        }
+    }
