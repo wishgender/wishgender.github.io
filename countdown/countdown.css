@@ -1,0 +1,63 @@
+/* 
+    laz r
+    03-05-2026 11:20
+    countdown.css
+*/
+
+
+table.countdown {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: thistle;
+    text-align: center;
+    border: 2px solid black;
+    color: indigo;
+    border-collapse: collapse;
+}
+
+table.countdown thead tr,
+table.countdown tbody tr {
+    border: 1px solid indigo;
+    display: flex;
+    justify-content: space-between;
+}
+
+table.countdown td,
+table.countdown th {
+    display: flex;
+    border: 1px solid indigo;
+}
+
+@media screen and (max-width: 700px) {
+    #events {}
+
+
+    table.countdown {
+        width: 100%;
+    }
+
+    table.countdown thead tr,
+    table.countdown tbody tr {
+        width: 100%;
+    }
+
+    table.countdown td,
+    table.countdown th {
+        width: 20%;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    #events {
+        display: grid;
+
+    }
+
+    table.countdown {
+        width: 50%;
+    }
+
+    table.countdown td,
+    table.countdown th {
+        width: 20%;
+    }
+}

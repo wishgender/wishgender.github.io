@@ -1,0 +1,62 @@
+{
+    "oneOffEvents": [
+        {
+            "eventName": "Koby & Laz's 3rd Date",
+            "eventDate": "2026-03-12T13:00:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "hours": 8
+            },
+            "upcoming?": true,
+            "eventDescription": "",
+            "eventTags": [
+                "date",
+                "personal",
+                "koby"
+            ]
+        },
+        {
+            "eventName": "Cleveland Fan Expo",
+            "eventDate": "2026-03-13T12:45:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "days": 2,
+                "hours": 5
+            },
+            "upcoming?": true,
+            "eventDescription": "",
+            "eventTags": [
+                "convention",
+                "cleveland",
+                "asg"
+            ]
+        },
+        {
+            "eventName": "Spring 2026 Spring Break",
+            "eventDate": "2026-03-09T00:00:00[America/New_York]",
+            "allDay?": true,
+            "duration": {
+                "weeks": 1
+            },
+            "eventTags": [
+                "school",
+                "break",
+                "academic calendar"
+            ]
+        },
+        {
+            "eventName": "Spring 2026 Finals Week",
+            "eventDate": "2026-05-04T00:00:00[America/New_York]",
+            "allDay?": true,
+            "duration": {
+                "weeks": 1
+            },
+            "eventTags": [
+                "school",
+                "finals",
+                "academic calendar"
+            ]
+        }
+    ],
+    "repeatingEvents": []
+}
