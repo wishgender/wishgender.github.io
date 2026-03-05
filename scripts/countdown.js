@@ -4,7 +4,7 @@
 
 //= Dependencies =//
 
-const kobyDay = "Mar 12, 2026 13:00:00";
+const kobyDay = "Mar 12, 2026 14:00:00";
 
 let countdownDate = new Date(kobyDay).getTime();
 
