@@ -1,8 +1,8 @@
 {
     "oneOffEvents": [
         {
-            "event name": "The next time I get to see Koby",
-            "event date": "2026-03-09T10:00:00[America/New_York]"
+            "eventName": "The next time I get to see Koby",
+            "eventDate": "2026-03-09T10:00:00[America/New_York]"
         },
         {
             "eventName": "Koby & Laz's 3rd Date",
