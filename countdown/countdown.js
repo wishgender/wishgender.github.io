@@ -35,37 +35,37 @@ fetch('events.json')
                         <div class="tableRow weeks">
                             <div class="headerCell">Weeks</div>
                             <div class="dataCell weeks">
-                                <span id="${event.eventName}weeks"></span>
+                                <span id="event${index}weeks"></span>
                             </div>
                         </div>
                         <div class="tableRow days">
                             <div class="headerCell">Days</div>
                             <div class="dataCell days">
-                                <span id="${event.eventName}days"></span>
+                                <span id="event${index}days"></span>
                             </div>
                         </div>
                         <div class="tableRow hours">
                             <div class="headerCell">Hours</div>
                             <div class="dataCell hours">
-                                <span id="${event.eventName}hours"></span>
+                                <span id="event${index}hours"></span>
                             </div>
                         </div>
                         <div class="tableRow minutes">
                             <div class="headerCell">Minutes</div>
                             <div class="dataCell minutes">
-                                <span id="${event.eventName}minutes"></span>
+                                <span id="event${index}minutes"></span>
                             </div>
                         </div>
                         <div class="tableRow seconds">
                             <div class="headerCell">Seconds</div>
                             <div class="dataCell seconds">
-                                <span id="${event.eventName}seconds"></span>
+                                <span id="event${index}seconds"></span>
                             </div>
                         </div>
                         <div class="tableRow milliseconds">
                             <div class="headerCell">Milliseconds</div>
                             <div class="dataCell">
-                                <span id="${event.eventName}milliseconds"></span>
+                                <span id="event${index}milliseconds"></span>
                             </div>
                         </div>
                     </div>
