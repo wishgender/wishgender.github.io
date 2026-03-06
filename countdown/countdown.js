@@ -14,60 +14,75 @@ fetch('events.json')
             console.log(event.eventDate)
             const eventTime = Temporal.ZonedDateTime.from(event.eventDate);
 
-
             const eventDiv = document.createElement("div");
             eventDiv.classList.add("event");
 
             const eventInfoDiv = document.createElement("div");
+            eventInfoDiv.classList.add("eventInfo");
             eventInfoDiv.innerHTML =
                 `
-            <h2>${event.eventName}</h2>
-            <h3>${eventTime}</h3>
+            <div class="eventName">${event.eventName}</div>
             `;
 
             eventDiv.appendChild(eventInfoDiv);
 
             const timerDiv = document.createElement("div");
             timerDiv.classList.add("timer");
+
+            timerDiv.innerHTML =
+                `
+                <div class="countdown">
+                        <div class="tableRow weeks">
+                            <div class="headerCell">Weeks</div>
+                            <div class="dataCell weeks">
+                                <span id="${event.eventName}weeks"></span>
+                            </div>
+                        </div>
+                        <div class="tableRow days">
+                            <div class="headerCell">Days</div>
+                            <div class="dataCell days">
+                                <span id="${event.eventName}days"></span>
+                            </div>
+                        </div>
+                        <div class="tableRow hours">
+                            <div class="headerCell">Hours</div>
+                            <div class="dataCell hours">
+                                <span id="${event.eventName}hours"></span>
+                            </div>
+                        </div>
+                        <div class="tableRow minutes">
+                            <div class="headerCell">Minutes</div>
+                            <div class="dataCell minutes">
+                                <span id="${event.eventName}minutes"></span>
+                            </div>
+                        </div>
+                        <div class="tableRow seconds">
+                            <div class="headerCell">Seconds</div>
+                            <div class="dataCell seconds">
+                                <span id="${event.eventName}seconds"></span>
+                            </div>
+                        </div>
+                        <div class="tableRow milliseconds">
+                            <div class="headerCell">Milliseconds</div>
+                            <div class="dataCell">
+                                <span id="${event.eventName}milliseconds"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            eventDiv.appendChild(timerDiv);
+
             let x = setInterval(function () {
                 const difference = (Temporal.Now.zonedDateTimeISO()).until(eventTime, { largestUnit: 'weeks' });
                 // console.log(difference);
-                timerDiv.innerHTML =
-                    `
-                <table class="countdown">
-                    <thead>
-                        <tr>
-                            <th>Weeks</th>
-                            <th>Days</th>
-                            <th>Hours</th>
-                            <th>Minutes</th>
-                            <th>Seconds</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <td class="weeks">
-                            ${difference.weeks} week${difference.weeks != 1 ? 's' : ''}
-                        </td>
-                        <td class="days">
-                            ${difference.days} day${difference.days != 1 ? 's' : ''}
-                        </td>
-                        <td class="hours">
-                            ${difference.hours} hour${difference.hours != 1 ? 's' : ''}
-                        </td>
-                        <td class="minutes">
-                            ${difference.minutes} minute${difference.minutes != 1 ? 's' : ''}
-                        </td>
-                        <td class="seconds">
-                            <span class="secondsWrapper">${difference.seconds}.${difference.milliseconds}</span>
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-                `
+                document.getElementById(`${event.eventName}weeks`).innerHTML = `${difference.weeks}`
+                document.getElementById(`${event.eventName}days`).innerHTML = `${difference.days}`
+                document.getElementById(`${event.eventName}hours`).innerHTML = `${difference.hours}`
+                document.getElementById(`${event.eventName}minutes`).innerHTML = `${difference.minutes}`
+                document.getElementById(`${event.eventName}seconds`).innerHTML = `${difference.seconds}`
+                document.getElementById(`${event.eventName}milliseconds`).innerHTML = `${difference.milliseconds}`
             }, 1);
-
-            eventDiv.appendChild(timerDiv);
 
             events.appendChild(eventDiv);
         });

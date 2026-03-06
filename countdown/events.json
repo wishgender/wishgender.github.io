@@ -58,5 +58,21 @@
             ]
         }
     ],
-    "repeatingEvents": []
+    "repeatingEvents": [
+        {
+            "eventName": "Next episode of All Systems Go!"
+        },
+        {
+            "eventName": "Next episode of The Blurb"
+        },
+        {
+            "eventName": "Next episode of The College Voice"
+        },
+        {
+            "eventName": "Next episode of Grab Bag"
+        },
+        {
+            "eventName": "Next episode of kentcore"
+        }
+    ]
 }

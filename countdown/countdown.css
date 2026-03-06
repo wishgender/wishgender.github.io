@@ -4,60 +4,121 @@
     countdown.css
 */
 
+@import url('https://cdn.jsdelivr.net/npm/@catppuccin/palette/css/catppuccin.css');
 
-table.countdown {
+html {
+    color: var(--ctp-mocha-text);
+    background-color: var(--ctp-mocha-base);
     font-family: 'Comic Sans MS', sans-serif;
-    background-color: thistle;
-    text-align: center;
-    border: 2px solid black;
-    color: indigo;
-    border-collapse: collapse;
 }
 
-table.countdown thead tr,
-table.countdown tbody tr {
-    border: 1px solid indigo;
+#events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+}
+
+.event {
+    background-color: var(--ctp-mocha-surface0);
+    border: 1px solid var(--ctp-mocha-overlay0);
+    border-radius: 15px;
+    box-shadow: 5px 5px var(--ctp-mocha-crust);
+
+    padding: 1rem;
+    margin: 0.5rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.eventName {
+    margin-bottom: 10px;
+    font-size: large;
+}
+
+div.countdown {
+    background-color: var(--ctp-mocha-surface1);
+    text-align: center;
+}
+
+div.countdown div.tableRow {
     display: flex;
     justify-content: space-between;
 }
 
-table.countdown td,
-table.countdown th {
-    display: flex;
-    border: 1px solid indigo;
+div.countdown div.dataCell,
+div.countdown div.headerCell {
+    border: 1px solid var(--ctp-mocha-overlay1);
+    padding: 3px;
+}
+
+
+div.weeks {
+    color: var(--ctp-mocha-red);
+}
+
+div.days {
+    color: var(--ctp-mocha-peach);
+}
+
+div.hours {
+    color: var(--ctp-mocha-yellow);
+}
+
+div.minutes {
+    color: var(--ctp-mocha-green);
+}
+
+div.seconds {
+    color: var(--ctp-mocha-blue);
+}
+
+div.headerCell {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* div.dataCell {
+    text-align: center;
+} */
+
+div.milliseconds {
+    color: var(--ctp-mocha-mauve);
 }
 
 @media screen and (max-width: 700px) {
-    #events {}
 
 
-    table.countdown {
+
+    div.timer {
         width: 100%;
     }
 
-    table.countdown thead tr,
-    table.countdown tbody tr {
+    div.countdown div.tableHead,
+    div.countdown div.tableBody div.tableRow {
         width: 100%;
     }
 
-    table.countdown td,
-    table.countdown th {
-        width: 20%;
+    div.countdown div.dataCell,
+    div.countdown div.headerCell {
+        width: 50%;
     }
 }
 
 @media screen and (min-width: 701px) {
     #events {
-        display: grid;
+        display: flex;
 
     }
 
-    table.countdown {
+    div.countdown {
+        width: 100%;
+    }
+
+    div.countdown div.headerCell,
+    div.countdown div.dataCell {
         width: 50%;
-    }
-
-    table.countdown td,
-    table.countdown th {
-        width: 20%;
     }
 }
