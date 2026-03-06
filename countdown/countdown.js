@@ -10,7 +10,7 @@ fetch('events.json')
     .then(data => {
         const events = document.getElementById("events");
 
-        data.oneOffEvents.forEach(event => {
+        data.oneOffEvents.forEach((event, index) => {
             console.log(event.eventDate)
             const eventTime = Temporal.ZonedDateTime.from(event.eventDate);
 
@@ -76,12 +76,12 @@ fetch('events.json')
             let x = setInterval(function () {
                 const difference = (Temporal.Now.zonedDateTimeISO()).until(eventTime, { largestUnit: 'weeks' });
                 // console.log(difference);
-                document.getElementById(`${event.eventName}weeks`).innerHTML = `${difference.weeks}`
-                document.getElementById(`${event.eventName}days`).innerHTML = `${difference.days}`
-                document.getElementById(`${event.eventName}hours`).innerHTML = `${difference.hours}`
-                document.getElementById(`${event.eventName}minutes`).innerHTML = `${difference.minutes}`
-                document.getElementById(`${event.eventName}seconds`).innerHTML = `${difference.seconds}`
-                document.getElementById(`${event.eventName}milliseconds`).innerHTML = `${difference.milliseconds}`
+                document.getElementById(`event${index}weeks`).innerHTML = `${difference.weeks}`
+                document.getElementById(`event${index}days`).innerHTML = `${difference.days}`
+                document.getElementById(`event${index}hours`).innerHTML = `${difference.hours}`
+                document.getElementById(`event${index}minutes`).innerHTML = `${difference.minutes}`
+                document.getElementById(`event${index}seconds`).innerHTML = `${difference.seconds}`
+                document.getElementById(`event${index}milliseconds`).innerHTML = `${difference.milliseconds}`
             }, 1);
 
             events.appendChild(eventDiv);
