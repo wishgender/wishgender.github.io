@@ -13,21 +13,6 @@
             "eventDate": "2026-03-10T12:00:00[America/New_York]"
         },
         {
-            "eventName": "Koby & Laz's 3rd Date",
-            "eventDate": "2026-03-12T13:00:00[America/New_York]",
-            "allDay?": false,
-            "duration": {
-                "hours": 8
-            },
-            "upcoming?": true,
-            "eventDescription": "",
-            "eventTags": [
-                "date",
-                "personal",
-                "koby"
-            ]
-        },
-        {
             "eventName": "Cleveland Fan Expo",
             "eventDate": "2026-03-13T12:45:00[America/New_York]",
             "allDay?": false,
