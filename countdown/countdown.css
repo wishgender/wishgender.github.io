@@ -8,11 +8,25 @@
 
 html {
     color: var(--ctp-mocha-text);
-    background-color: var(--ctp-mocha-base);
+    background-color: var(--ctp-mocha-mantle);
     font-family: 'Comic Sans MS', sans-serif;
 }
 
-#events {
+h2 {
+    text-align: center;
+}
+
+#eventsWrapper,
+#pastWrapper {
+    background-color: var(--ctp-mocha-base);
+    border: 1px solid var(--ctp-mocha-overlay0);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+#events,
+#past {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -108,9 +122,10 @@ div.milliseconds {
 }
 
 @media screen and (min-width: 701px) {
-    #events {
-        display: flex;
 
+    #events,
+    #past {
+        display: flex;
     }
 
     div.countdown {

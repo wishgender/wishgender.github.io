@@ -42,6 +42,52 @@
             ]
         },
         {
+            "eventName": "Snackbox Get-Together",
+            "eventDate": "2026-04-10T21:30:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "hours": 3
+            },
+            "eventTags": [
+                "friends"
+            ]
+        },
+        {
+            "eventName": "Date with Koby <3",
+            "eventDate": "2026-04-11T17:00:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "hours": 7
+            },
+            "eventTags": [
+                "koby"
+            ]
+        },
+        {
+            "eventName": "Grab Bag Season 5 Finale",
+            "eventDate": "2026-04-23T21:00:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "hours": 1
+            },
+            "eventTags": [
+                "grab bag",
+                "student media"
+            ]
+        },
+        {
+            "eventName": "All Systems Go! Season 18 Finale",
+            "eventDate": "2026-04-22T20:00:00[America/New_York]",
+            "allDay?": false,
+            "duration": {
+                "hours": 1
+            },
+            "eventTags": [
+                "all systems go",
+                "student media"
+            ]
+        },
+        {
             "eventName": "Spring 2026 Finals Week",
             "eventDate": "2026-05-04T00:00:00[America/New_York]",
             "allDay?": true,

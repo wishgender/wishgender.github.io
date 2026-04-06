@@ -5,7 +5,7 @@
 // const { response } = require("express");
 
 //= Dependencies =//
-fetch('events.json')
+fetch('./events.json')
     .then(response => response.json())
     .then(data => {
         const events = document.getElementById("events");
@@ -28,15 +28,15 @@ fetch('events.json')
 
             const timerDiv = document.createElement("div");
             timerDiv.classList.add("timer");
-
-            if (eventTime < Temporal.Now.zonedDateTimeISO()) {
+            if (Temporal.ZonedDateTime.compare(eventTime, Temporal.Now.zonedDateTimeISO()) == -1) {
                 timerDiv.innerHTML =
                     `
                 <div class="countdown">
                     Event passed
                 </div>
-                `
-            } else {
+                `;
+            }
+            else {
                 timerDiv.innerHTML =
                     `
                     <div class="countdown">
@@ -79,7 +79,6 @@ fetch('events.json')
                         </div>
                     </div>
                 `
-                eventDiv.appendChild(timerDiv);
 
                 let x = setInterval(function () {
                     const difference = (Temporal.Now.zonedDateTimeISO()).until(eventTime, { largestUnit: 'weeks' });
@@ -92,8 +91,15 @@ fetch('events.json')
                     document.getElementById(`event${index}milliseconds`).innerHTML = `${difference.milliseconds}`
                 }, 1);
 
+            }
+
+            eventDiv.appendChild(timerDiv);
+            if (Temporal.ZonedDateTime.compare(eventTime, Temporal.Now.zonedDateTimeISO()) == -1) {
+                document.getElementById("past").appendChild(eventDiv);
+            } else {
                 events.appendChild(eventDiv);
             }
+
         });
 
         // data.repeatingEvents.forEach(event => { });

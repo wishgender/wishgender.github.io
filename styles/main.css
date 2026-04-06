@@ -19,10 +19,7 @@ body {
         padding: 0 1rem 0 1rem;
         display: grid;
         grid:
-            "Header Header Header" auto
-            "Sidebar Content Content" 1fr
-            "Footer Footer Footer" auto
-            / 0.6fr 1fr 1fr;
+            "Header Header Header" auto "Sidebar Content Content" 1fr "Footer Footer Footer" auto / 0.6fr 1fr 1fr;
         gap: 1rem;
     }
 
@@ -36,11 +33,7 @@ body {
     .PageLayout {
         display: grid;
         grid:
-            "Header Header Header" auto
-            "Sidebar Sidebar Sidebar" auto
-            "Content Content Content" 1fr
-            "Footer Footer Footer" auto
-            / auto 1fr 1fr;
+            "Header Header Header" auto "Sidebar Sidebar Sidebar" auto "Content Content Content" 1fr "Footer Footer Footer" auto / auto 1fr 1fr;
     }
 
     #Sidebar {
@@ -48,6 +41,7 @@ body {
         gap: 0px;
     }
 }
+
 #Header {
     grid-area: Header;
     text-align: center;
@@ -69,7 +63,8 @@ body {
     text-align: center;
 }
 
-:root, body {
+:root,
+body {
     background-color: var(--ctpbase);
 }
 
@@ -77,20 +72,22 @@ body {
 
 .sidebar button {
     font-family: 'Skranji';
-    font-size:large;
+    font-size: large;
     color: var(--text);
-    padding:15px;
+    padding: 15px;
     border-radius: 8px;
 }
 
 .sidebar button.active {
     color: var(--green);
-    transform: scale(1.1); /* highlight active button */
+    transform: scale(1.1);
+    /* highlight active button */
 }
 
 .sidebar button:hover:not(.active) {
     color: var(--sapphire);
-    transform: scale(1.1);  /* grow visually, no reflow */
+    transform: scale(1.1);
+    /* grow visually, no reflow */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -117,10 +114,10 @@ body {
 }
 
 #About>p {
-    text-align: left; 
-    text-indent: 25px; 
-    padding-left: 25px; 
-    padding-right: 25px; 
+    text-align: left;
+    text-indent: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
     font-size: large;
 }
 
@@ -128,8 +125,8 @@ body {
     text-align: center;
     justify-content: space-evenly;
     align-items: center;
-    padding:1em;
-    display:flex;
+    padding: 1em;
+    display: flex;
     /* grid:
         "DexNum PokeFarm" auto
         "ThisDay ThisDay" auto
@@ -157,7 +154,7 @@ body {
     text-align: center;
 }
 
-#Friends.tabcontent  {
+#Friends.tabcontent {
     padding-bottom: 1rem;
 }
 
@@ -169,14 +166,45 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-.friendButton:hover {
-    transform: scale(1.5);  /* grow visually, no reflow */
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+@keyframes buttonGrow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
 }
+
+@keyframes buttonShrink {
+    0% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.friendButton:hover {
+    animation-name: buttonGrow;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    transform: scale(1.5);
+    /* grow visually, no reflow */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
 
 /* Social Buttons */
 
-.socialButtons a:link, a:visited{
+.socialButtons a:link,
+a:visited {
     border-style: groove;
     border-radius: 100%;
     padding: 5px 5px;
@@ -185,12 +213,12 @@ body {
     background-color: var(--crust);
 }
 
-.socialButtons{
+.socialButtons {
     /* align-items: center; */
-    display:flex;
-    gap:20px;
-    justify-content:space-evenly;
-    padding:20px
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px
 }
 
 .socialButtons>a {
@@ -199,9 +227,14 @@ body {
     align-items: center;
 }
 
-a:link.YouTube, a:visited.YouTube {
+a:link.YouTube,
+a:visited.YouTube {
     border-color: var(--red);
-    i {color:var(--red)}
+
+    i {
+        color: var(--red)
+    }
+
     background-color: var(--crust);
 }
 
@@ -210,35 +243,56 @@ a:link.YouTube, a:visited.YouTube {
 }
 
 .socialButtons a:active {
-    border-style:inset;
+    border-style: inset;
 }
 
 .Blogger {
     border-color: var(--peach);
-    i{color:var(--peach)};
+
+    i {
+        color: var(--peach)
+    }
+
+    ;
     background-color: var(--crust);
 }
 
 .Bluesky {
     border-color: var(--sky);
-    i{color:var(--sky)}
+
+    i {
+        color: var(--sky)
+    }
+
     background-color: var(--crust);
 }
 
 .Mastodon {
     border-color: var(--lavender);
-    i{color:var(--lavender)}
+
+    i {
+        color: var(--lavender)
+    }
+
     background-color: var(--crust);
 }
 
 .GitHub {
     border-color: var(--mauve);
-    i{color:var(--mauve)}
+
+    i {
+        color: var(--mauve)
+    }
+
     background-color: var(--crust);
 }
 
 .Instagram {
     border-color: var(--pink);
-    i{color:var(--pink)}
+
+    i {
+        color: var(--pink)
+    }
+
     background-color: var(--crust);
 }

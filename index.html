@@ -104,24 +104,26 @@
                             class="nf nf-fa-star"></h1>
                 <h3 style="color:var(--lavender)">Friends</h3>
                 <div class="friendLinks">
-                    <a href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png" class="friendButton"></a>
-                    <a href="https://v360tech.neocities.org/"><img src="images/v360tech.gif" class="friendButton"></a>
-                    <a href="https://twitter.com/disgustjpg"><img src="images/disgust.svg" style="height:31px"
+                    <a class="collabLink" href="https://vivy-nx.neocities.org/"><img src="images/vivy-nx.png"
                             class="friendButton"></a>
+                    <a class="collabLink" href="https://v360tech.neocities.org/"><img src="images/v360tech.gif"
+                            class="friendButton"></a>
+                    <a class="collabLink" href="https://twitter.com/disgustjpg"><img src="images/disgust.svg"
+                            style="height:31px" class="friendButton"></a>
                 </div>
 
                 <div id="collabLinks">
                     <h3 style="color:var(--lavender)">Collabs and Projects I've Participated In</h3>
                     <div style="display: flex; justify-content: space-evenly;">
                         <div title="All Systems Go">
-                            <a href="https://blacksquirrelentertainment.com/tv/all-systems-go">
+                            <a class="collabLink" href="https://blacksquirrelentertainment.com/tv/all-systems-go">
                                 <img src="images/asg.svg" height="48px" class="friendButton"></a>
                         </div>
                         <div title="The Blurb">
-                            <a href="https://blacksquirrelentertainment.com/tv/the-blurb"><img src="images/blurb.svg"
-                                    height="48px" class="friendButton"></a>
+                            <a class="collabLink" href="https://blacksquirrelentertainment.com/tv/the-blurb"><img
+                                    src="images/blurb.svg" height="48px" class="friendButton"></a>
                         </div>
-                        <div title="Grab Bag">
+                        <div class="collabLink" title="Grab Bag">
                             <a href="https://blacksquirrelentertainment.com/tv/grab-bag"><img src="images/grabbag.svg"
                                     height="48px" style="background-color: var(--surface2); border-radius: 15px;"
                                     class="friendButton"></a>
@@ -194,6 +196,15 @@
                 evt.currentTarget.className += " active";
             }
             document.getElementById("defaultOpen").click();
+        </script>
+        <script id="buttonShrink">
+            function buttonShrink(e) {
+
+            }
+            let buttons = document.getElementsByClassName("collabLink");
+            for (let button of buttons) {
+                button.addEventListener("mouseenter",)
+            }
         </script>
     </body>
 
