@@ -99,6 +99,30 @@
                 "finals",
                 "academic calendar"
             ]
+        },
+        {
+            "eventName": "Fall 2026 Grad Student Orientation",
+            "eventDate": "2026-08-20T09:00:00[America/New_York]",
+            "allDay?": true,
+            "duration" : {
+                "days": 1
+            },
+            "eventTags": [
+                "school",
+                "academic calendar"
+            ]
+        },
+        {
+            "eventName": "Fall 2026 Classes Begin",
+            "eventDate": "2026-08-24T00:00:00[America/New_York]",
+            "allDay?": true,
+            "duration" : {
+                "days": 1
+            },
+            "eventTags": [
+                "school",
+                "academic calendar"
+            ]
         }
     ],
     "repeatingEvents": [
