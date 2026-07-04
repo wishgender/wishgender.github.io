@@ -1,0 +1,17 @@
+#Friends {
+    text-align: center;
+    color: var(--lavender);
+    padding: 0.5rem;
+    margin: 0;
+}
+
+#CollabLinks, #FriendLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top:0.5rem;
+}
+
+#GrabBagLogo {
+    background-color: var(--surface2); border-radius: 15px;
+}

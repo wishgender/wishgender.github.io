@@ -1,0 +1,98 @@
+@import url(./palette.css);
+@import url("https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css");
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+/* Social Buttons */
+
+.socialButtons a:link,
+a:visited {
+    border-style: groove;
+    border-radius: 100%;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--crust);
+}
+
+.socialButtons {
+    /* align-items: center; */
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.socialButtons>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:link.YouTube,
+a:visited.YouTube {
+    border-color: var(--red);
+
+    i {
+        color: var(--red)
+    }
+
+    background-color: var(--crust);
+}
+
+.socialButtons a {
+    background-color: var(--crust);
+}
+
+.socialButtons a:active {
+    border-style: inset;
+}
+
+.Blogger {
+    border-color: var(--peach);
+
+    i {
+        color: var(--peach)
+    }
+
+    ;
+    background-color: var(--crust);
+}
+
+.Bluesky {
+    border-color: var(--sky);
+
+    i {
+        color: var(--sky)
+    }
+
+    background-color: var(--crust);
+}
+
+.Mastodon {
+    border-color: var(--lavender);
+
+    i {
+        color: var(--lavender)
+    }
+
+    background-color: var(--crust);
+}
+
+.GitHub {
+    border-color: var(--mauve);
+
+    i {
+        color: var(--mauve)
+    }
+
+    background-color: var(--crust);
+}
+
+.Instagram {
+    border-color: var(--pink);
+
+    i {
+        color: var(--pink)
+    }
+
+    background-color: var(--crust);
+}
