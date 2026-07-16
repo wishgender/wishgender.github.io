@@ -59,6 +59,7 @@ const content = {
     toys: [
         "Pokédex Number Lookup",
         "My Other Web Apps",
+        "Tepig Enclosure",
         "My PokéFarm"
     ],
     otherApps: [
@@ -71,11 +72,6 @@ const content = {
             slug: "sheepSite",
             title: "Counting Mareep",
             url: "https://sleep.wishgender.dev"
-        }, 
-        {
-            slug: "tepigEnclosure",
-            title: "The Tepig Enclosure",
-            url: "https://tepig-enclosure.vercel.app/static"
         }
 
     ],

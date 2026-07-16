@@ -137,6 +137,10 @@ body {
     padding-bottom: 1rem;
     color: var(--subtext0);
     overflow-y: scroll;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
 }
 
 @media screen and (min-width: 701px) {

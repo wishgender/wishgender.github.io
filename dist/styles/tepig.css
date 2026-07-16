@@ -1,0 +1,40 @@
+@import url(palette.css);
+.tepigZone {
+    width: 100%;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#actions button {
+    margin: 10px;
+    font-family: 'Comic Sans MS';
+}
+
+#tepigEnclosure {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    height: 90%;
+    border: 2px var(--yellow) solid;
+    background-color: var(--green);
+    margin:0;
+}
+
+.tepig img {
+    padding: 3px;
+}
+
+.tepig :hover {
+    cursor: grab
+}

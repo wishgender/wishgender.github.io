@@ -16,7 +16,7 @@ import Fun from "./components/tabcontent/Fun.jsx";
 const App = () => {
     const [pageContent, setPageContent] = useState(content);
     const [activeTab, setActiveTab] = useState("Home");
-    const [activeFunTab, setActiveFunTab] = useState(null);
+    const [activeFunTab, setActiveFunTab] = useState("Pokédex Number Lookup");
 
     useEffect(() => {
         setPageContent(content);
