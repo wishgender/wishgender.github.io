@@ -4,6 +4,20 @@
 
 // const { response } = require("express");
 
+const isSemester = false;
+
+const clickPast = () => {
+    const showing = document.getElementById("past").classList.contains("showing"); 
+    if (showing) {
+        document.getElementById("hidePast").classList.replace("showing", "hiding");
+        document.getElementById("past").classList.replace("showing", "hiding");
+    }
+    else {
+        document.getElementById("hidePast").classList.replace("hiding", "showing");
+        document.getElementById("past").classList.replace("hiding", "showing");
+    }
+};
+
 //= Dependencies =//
 fetch('./events.json')
     .then(response => response.json())
